@@ -13,10 +13,10 @@ public class ReverseArray {
         int[] NewArray=new int[array.length];
         int index=0;
         for(int i=array.length-1;i>=0;i--){
-            // if(true){
+         
                 NewArray[index]=array[i];
                 index++;
-            // }
+           
 
         }
 
