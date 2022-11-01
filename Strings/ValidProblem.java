@@ -2,7 +2,7 @@ package Strings;
 
 public class ValidProblem {
     public static void main(String[] args) {
-        String s="A man, a plan, a canal: Panama";
+        String s="fgsdgsdkhkh";
         System.out.println("Ans is:"+isPalindrome(s));
         
         
@@ -18,7 +18,7 @@ public class ValidProblem {
                 end--;
             }
 
-        if(Character.isLetterOrDigit(start)!=Character.isLetterOrDigit(end)){
+        if(start<end && Character.toLowerCase(s.charAt(start)) != Character.toLowerCase(s.charAt(end))){
             return false;
         }
         start++;
