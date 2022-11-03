@@ -8,7 +8,7 @@ public class CountTripletsWithSumSmallerthanGivenValue {
     }
 
     public static void FindTriplet(int[] a,int sum){
-        for()
+        // for()
 
     }
     
