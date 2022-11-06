@@ -58,6 +58,37 @@ public class SinglyLinkedlist {
     
    }
 
+// Method to delete first node
+public static void deleteFirst(){
+    if(head==null){
+        System.out.println("the list is empty");
+        return;
+    }
+    
+    head=head.next;
+    
+}
+// Method to delete last node
+public static void deleteLast(){
+    // checking linkedlist empty or not
+    if(head==null){
+        System.out.println("the list is empty");
+        return;
+    }
+    // checking linkedlist last element null otherwise give error
+
+    Node secondlast=head;
+    Node lastNode=head.next;
+    while(lastNode.next!=null){
+        secondlast=secondlast.next;
+        lastNode=lastNode.next;
+    }
+
+secondlast.next=null;
+}
+
+
+
 //Method to print the linkedlist
 public static void printList(SinglyLinkedlist list){
     Node currNode=list.head;
@@ -88,6 +119,19 @@ public static void printList(SinglyLinkedlist list){
      addFirst(list,6);
      addFirst(list,7);
     
+    // print the linkedlist
+    printList(list);
+    
+    // delete first node
+    deleteFirst();
+    deleteFirst();
+    deleteFirst();
+    // print the linkedlist
+    printList(list);
+    
+    // delete from last node
+    deleteLast();
+    deleteLast();
     // print the linkedlist
     printList(list);
     
