@@ -5,6 +5,10 @@ import javafx.scene.Node;
 public class DeletionionLinkedlist {
 
     static Node head;
+    private static int size;
+    DeletionionLinkedlist(){
+        this.size=0;
+    }
 
     static class Node{
         int data;
@@ -14,6 +18,7 @@ public class DeletionionLinkedlist {
         Node(int d){
             data=d;
             next=null;
+            size++;
 
         }
     }
@@ -65,23 +70,25 @@ public static void deleteByKey(int key){
     // if had node itself key which we have to deleted
     if(secondlast!=null && secondlast.data==key){
         head=secondlast.next;
-        System.out.println(key+"Delted");
-
+        System.out.println(key+" Delted");
+        size--;
+        
     }
-
+    
     // case2:
     // if key is someWhere other than at head
     while(lastNode!=null && lastNode.data!=key){
         secondlast=secondlast.next;
         lastNode=lastNode.next;
     }
-
+    
     // Note:we have updated lastNode
     if(lastNode!=null){
-
+        
         secondlast.next=lastNode.next;
         // Display the message
         System.out.println(key+" Deleted");
+        size--;
     }
 
     // case3:
@@ -104,6 +111,11 @@ public static void printList(){
     System.out.println();
 }   
 
+// returning size of linkedlist
+public int getSize(){
+    return size;
+}
+
 
 public static void main(String[] args) {
     // empty linkedlist
@@ -123,6 +135,10 @@ public static void main(String[] args) {
     //deleting node using key
     deleteByKey(3);
     deleteByKey(6);
+    System.out.println("Size:"+list.getSize());
+    deleteByKey(1);
+    deleteByKey(5);
     printList(); 
+    System.out.println("Size:"+list.getSize());
 }    
 }
