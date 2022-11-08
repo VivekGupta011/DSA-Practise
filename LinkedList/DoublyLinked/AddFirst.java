@@ -50,6 +50,8 @@ public class AddFirst {
         newNode.next=null;
     }
 
+   
+
     // Display the node
     public static void Display(){
         Node temp=head;

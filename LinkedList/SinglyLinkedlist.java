@@ -7,6 +7,7 @@ import javafx.scene.Node;
 public class SinglyLinkedlist {
     //head of list
     static Node head;
+    static Node tail;
 
     static class Node{
         int data;
@@ -26,6 +27,7 @@ public class SinglyLinkedlist {
         Node new_node=new Node(data);
         if(list.head==null){
             list.head=new_node;
+            return;
         }
         new_node.next=list.head;
         list.head=new_node;
@@ -87,6 +89,19 @@ public static void deleteLast(){
 secondlast.next=null;
 }
 
+ // duplicate value
+ public static void duplicate(){
+    Node CurrNode=head;
+    while(CurrNode!=null && CurrNode.next!=null){
+        if(CurrNode.data==CurrNode.next.data){
+            CurrNode.next=CurrNode.next.next;
+        }else{
+            CurrNode=CurrNode.next;
+        }
+    }
+    // tail=CurrNode;
+    // tail.next=null;
+}
 
 
 //Method to print the linkedlist
@@ -107,33 +122,38 @@ public static void printList(SinglyLinkedlist list){
     // empty linkedlist
     SinglyLinkedlist list=new SinglyLinkedlist();
 
-    // insertion at last node
-    for(int i=0;i<11;i++){
-        insert(list, i);
-    }
-    // print the linkedlist
-    printList(list);
+    // // insertion at last node
+    // for(int i=0;i<11;i++){
+    //     insert(list, i);
+    // }
+    // // print the linkedlist
+    // printList(list);
     
     // insertion at first node
-     addFirst(list,5);
-     addFirst(list,6);
-     addFirst(list,7);
+     insert(list, 1);
+     insert(list, 2);
+     insert(list, 2);
+     insert(list, 3);
+     insert(list, 3);
+     insert(list, 4);
+     printList(list);
+     
+     // print the linkedlist
+     duplicate();
+     printList(list);
     
-    // print the linkedlist
-    printList(list);
+    // // delete first node
+    // deleteFirst();
+    // deleteFirst();
+    // deleteFirst();
+    // // print the linkedlist
+    // printList(list);
     
-    // delete first node
-    deleteFirst();
-    deleteFirst();
-    deleteFirst();
-    // print the linkedlist
-    printList(list);
-    
-    // delete from last node
-    deleteLast();
-    deleteLast();
-    // print the linkedlist
-    printList(list);
+    // // delete from last node
+    // deleteLast();
+    // deleteLast();
+    // // print the linkedlist
+    // printList(list);
     
    }    
 }
