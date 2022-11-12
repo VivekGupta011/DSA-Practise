@@ -1,5 +1,6 @@
 package LinkedList;
 
+// use this linkedlist for revision
 import java.util.LinkedList;
 
 import javafx.scene.Node;
@@ -142,6 +143,7 @@ public class ReversedLinkedList {
     public static void main(String[] args) {
         // empty linkedlist
         ReversedLinkedList list = new ReversedLinkedList();
+        ReversedLinkedList list1 = new ReversedLinkedList();
 
         // insertion at first node
         insert(list, 1);
@@ -150,10 +152,15 @@ public class ReversedLinkedList {
         insert(list, 4);
         insert(list, 5);
         insert(list, 6);
+        insert(list1, 0);
+        insert(list1, 1);
+        insert(list1, 0);
         printList(list);
+        printList(list1);
 
         // print the linkedlist
-        // duplicate();
+        System.out.println("Reversed linkedlist:");
+        duplicate();
         list.ReversedLinked();
         printList(list);
 
