@@ -1,4 +1,4 @@
-package Arrays.TwoDArrays;
+package Matrix;
 
 public class FindTranspose {
 

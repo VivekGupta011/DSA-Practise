@@ -1,4 +1,4 @@
-package Arrays.TwoDArrays;
+package Arrays.Matrix;
 
 
 public class MatrixMultiplication {
