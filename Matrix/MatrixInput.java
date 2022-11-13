@@ -2,7 +2,7 @@ package Matrix;
 
 import java.util.Scanner;
 
-public class MatrixMultiplication {
+public class MatrixInput {
     
     static Scanner in=new Scanner(System.in);
 
