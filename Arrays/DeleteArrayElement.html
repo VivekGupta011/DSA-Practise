@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function removeEl() {
+        let array = [4, 5, 6, 7, 8];
+        console.warn("original:"+array);
+        let position = document.getElementById("position").value;
+        console.warn(typeof position);
+        position=parseInt(position);
+        for (let i = 3; i < array.length - 1; i++) {
+          array[i] = array[i + 1];
+        }
+        array.length = array.length - 1;
+        console.warn(array);
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="position" placeholder="enter position" />
+    <button onclick="removeEl()">Remove Element</button>
+  </body>
+</html>
