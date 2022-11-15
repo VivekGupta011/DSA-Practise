@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Dynamic(){
+            let text=document.createElement("h1");
+            let image=document.createElement("img");
+            text.innerHTML=document.getElementById("nametext").value;
+            text.style.color="red";
+            document.getElementById('test').append(text);
+            image.src="https://i.scdn.co/image/ab67616d0000b273e4d27291254d4a9937dd5780";
+            image.style.width="100%";
+            document.getElementById('test').append(image);
+
+
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="nametext">
+    <button onclick="Dynamic()">createElement</button>
+    <div id="test">
+
+    </div>
+
+    
+</body>
+</html>
