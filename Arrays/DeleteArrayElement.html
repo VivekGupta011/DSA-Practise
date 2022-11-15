@@ -10,9 +10,9 @@
         let array = [4, 5, 6, 7, 8];
         console.warn("original:"+array);
         let position = document.getElementById("position").value;
-        console.warn(typeof position);
         position=parseInt(position);
-        for (let i = 3; i < array.length - 1; i++) {
+        console.warn(typeof position);
+        for (let i = position; i < array.length - 1; i++) {
           array[i] = array[i + 1];
         }
         array.length = array.length - 1;

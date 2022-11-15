@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function AddElement(){
+            let data=[3,5,7,8,9,12,34,45,60];
+        let newElement=document.getElementById("newElement").value;
+        let position=document.getElementById("position").value;
+        for(let i=data.length-1;i>=0;i--){
+            if(i>=position){
+              data[i+1]=data[i];   
+              if(i==position){
+                data[i]=parseInt(newElement);
+              }
+            }
+        }
+        console.warn(data);
+        }
+    </script>
+    <input type="text" id="position" placeholder="position">
+    <input type="text" id="newElement" placeholder="newElement">
+    <button onclick="AddElement()">click me!</button>
+</body>
+</html>
