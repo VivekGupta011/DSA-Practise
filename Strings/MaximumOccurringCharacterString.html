@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let name = "vivekguuuupta";
+      let output = name.charAt(0);
+      let count = 0;
+      let obj={};
+      let i,j;
+      for(i=0;i<name.length;i++){
+        for(j=0;j<name.length;j++){
+            if(name[i]!=name[j]){
+                console.log("not equal:"+i);
+            }
+            else{
+                count++;
+            }
+        }
+        obj.name[j]=count;
+        // count=0;
+      }
+      console.log("object:"+obj);
+      
+    </script>
+  </head>
+  <body></body>
+</html>
