@@ -6,26 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      let name = "vivekguuuupta";
-      let output = name.charAt(0);
-      let count = 0;
-      let obj={};
-      let i,j;
-      for(i=0;i<name.length;i++){
-        for(j=0;j<name.length;j++){
-            if(name[i]!=name[j]){
-                console.log("not equal:"+i);
-            }
-            else{
-                count++;
-            }
+      function CharacterCounter() {
+        let name = document.getElementById("UserInput").value;
+        let output = name.charAt(0);
+        let count = 0;
+        let MaxKey = 0;
+        let obj = {};
+
+        for (let i = 0; i < name.length; i++) {
+          let key = name[i];
+          if (!obj[key]) {
+            obj[key] = 0;
+          }
+          console.log("increase");
+          obj[key]++;
+          // else{
+          //   obj[key]++;
+          // }
         }
-        obj.name[j]=count;
-        // count=0;
+        for (let Element in obj) {
+          if (MaxKey < obj[Element]) {
+            MaxKey = obj[Element];
+          }
+          console.log(Element + ":" + obj[Element]);
+        }
+        console.log("highest occurring:" + MaxKey);
       }
-      console.log("object:"+obj);
-      
     </script>
   </head>
-  <body></body>
+  <body>
+    <input type="text" id="UserInput">
+    <input type="button" value="Check Highest occurring" onclick="CharacterCounter()">
+  </body>
 </html>
