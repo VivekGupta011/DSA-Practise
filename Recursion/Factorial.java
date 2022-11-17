@@ -6,8 +6,8 @@ public class Factorial {
         if (num == 0) {
             return 1;
         }
-        num=num * FactorialNum(num - 1);
-        return num;
+        
+        return num * FactorialNum(num - 1);
         // for(int i=1;i<num+1;i++){
         // total=total*i;
         // }
