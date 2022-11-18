@@ -19,6 +19,7 @@ public class PalindromeOfNumberUsingRecursion {
         System.out.println("original:"+num);
         if(PalindromeChecker(num, 0)==num){
             System.out.println("Palindrome:"+PalindromeChecker(num, 0));
+            
         }else{
             System.out.println("Palindrome Not:"+PalindromeChecker(num, 0));
 
