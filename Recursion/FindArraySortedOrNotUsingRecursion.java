@@ -8,7 +8,6 @@ public class FindArraySortedOrNotUsingRecursion {
         if(index==array.length-1){
             return true;
         }
-        System.out.println("index:"+index);
 
         return array[index]<array[index+1] && CheckSortOrNot(array, index+1);
     }
