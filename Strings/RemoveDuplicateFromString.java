@@ -15,7 +15,7 @@ public class RemoveDuplicateFromString {
                     }
                 }
             }
-            if(index==0){
+            if(index==0 || index==1){
                 Result=Result+word.charAt(i);
             }else{
                 index=0;
