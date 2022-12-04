@@ -1,7 +1,5 @@
 package LinkedList;
 
-import javafx.scene.Node;
-
 public class DeleteAllNodegreterthan25 {
     static Node head;
 

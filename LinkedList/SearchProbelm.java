@@ -1,6 +1,5 @@
 package LinkedList;
 
-import javafx.scene.Node;
 
 public class SearchProbelm {
     static Node head;

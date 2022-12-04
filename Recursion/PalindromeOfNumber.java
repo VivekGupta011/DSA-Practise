@@ -1,7 +1,5 @@
 package Recursion;
 
-import javafx.scene.effect.Light.Spot;
-
 public class PalindromeOfNumber {
     public static void PalindromeChecker(int num){
         int reversedNum=0;
