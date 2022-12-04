@@ -3,7 +3,7 @@ package LinkedList;
 // use this linkedlist for revision
 import java.util.LinkedList;
 
-import javafx.scene.Node;
+// import javafx.scene.Node;
 
 public class ReversedLinkedList {
     // head of list

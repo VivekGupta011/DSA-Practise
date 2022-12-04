@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.*;
 
-import javafx.scene.Node;
+
 
 public class InsertPrintOperation {
     Node head;

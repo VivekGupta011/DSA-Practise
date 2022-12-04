@@ -1,6 +1,6 @@
 package LinkedList;
 
-import javafx.scene.Node;
+
 
 public class DeletionionLinkedlist {
 

@@ -1,7 +1,6 @@
 package LinkedList;
 
 import java.util.LinkedList;
-import javafx.scene.Node;
 
 public class DeleteNode {
     static Node head;

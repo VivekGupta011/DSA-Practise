@@ -2,7 +2,7 @@ package LinkedList;
 
 import java.util.LinkedList;
 
-import javafx.scene.Node;
+// import javafx.scene.Node;
 
 public class SinglyLinkedlist {
     //head of list

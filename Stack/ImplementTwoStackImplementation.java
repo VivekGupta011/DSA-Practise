@@ -79,7 +79,7 @@ class ImplementTwoStackImplementation {
 		return 0;
 	}
 
-	// Driver program to test twoStack class
+    
 	public static void main(String args[])
 	{
 		ImplementTwoStackImplementation ts = new ImplementTwoStackImplementation(5);
