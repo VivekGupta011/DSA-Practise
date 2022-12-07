@@ -17,6 +17,7 @@ public class QueueUsingCollectionFramework {
         q.add(4);
         q.add(5);
         q.add(6);
+        q.add(7);
         q.remove();
         q.remove();
         q.remove();
