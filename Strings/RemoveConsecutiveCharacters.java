@@ -2,7 +2,7 @@ package Strings;
 
 public class RemoveConsecutiveCharacters {
     public static void main(String[] args) {
-        String s = "abbbbbaaa";
+        String s = "abbbbbaal";
         // output:ab
         System.out.println("Ans is:"+remove(s));
 
@@ -17,6 +17,7 @@ public class RemoveConsecutiveCharacters {
             }
             else{
                 res+=input.charAt(i);
+                
             }
         }
         return res;
