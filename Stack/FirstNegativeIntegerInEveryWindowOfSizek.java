@@ -1,5 +1,6 @@
 package Stack;
 
+// Naive Approach
 public class FirstNegativeIntegerInEveryWindowOfSizek {
     public static void FindKValue(int[] array) {
         // two subarray
