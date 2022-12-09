@@ -22,6 +22,11 @@ public class BackspaceStackProblem {
             }
         }
 
+
+
+
+        
+
         for (char c : t.toCharArray()) {
             if (c != '#') {
                 stack2.push(c);
