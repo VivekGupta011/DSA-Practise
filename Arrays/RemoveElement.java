@@ -10,7 +10,7 @@ public class RemoveElement {
             if(nums[i]==val){
                 continue;
             }
-            if(nums[i]!=val){
+            if(nums[i]!=val){ 
                 nums[count++]=nums[i];
             }
         }
