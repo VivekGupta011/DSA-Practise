@@ -13,7 +13,7 @@ public class TwoSum {
             } else if (arr[start] + arr[last] < target) {
                 start++;
             } else {
-                last--;
+                last--; 
             }
         }
         return arr;

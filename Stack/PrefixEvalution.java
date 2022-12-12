@@ -116,7 +116,6 @@ public class PrefixEvalution {
         // '0' from exprsn[j].
         if (chk(s.charAt(j))){
             Stack.push((double)(s.charAt(j) - 48));
-          
         }
         else {
           // Operator encountered
