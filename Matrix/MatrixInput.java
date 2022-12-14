@@ -36,11 +36,7 @@ public class MatrixInput {
         int[][] Matrix=new int[row][col];
 
         // calling method
-        matrixMultiplication(Matrix, row, col);
-
-
-        
-        
+        matrixMultiplication(Matrix, row, col);       
     }
     
 }

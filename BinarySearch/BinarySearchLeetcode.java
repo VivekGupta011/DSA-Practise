@@ -1,7 +1,7 @@
 package BinarySearch;
 
 public class BinarySearchLeetcode {
-    public int search(int[] nums, int target) {
+    public int search(int[] nums, int target) { 
 
         int first = 0;
         int last = nums.length - 1;
