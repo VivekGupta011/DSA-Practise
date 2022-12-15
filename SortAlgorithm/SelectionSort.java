@@ -6,7 +6,7 @@ import fundamental.Array;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] arr={5,56,36,34,56,2,34,57,1};
+        int[] arr={2,0,1};
         Selection(arr);
         System.out.println("Selection:"+Arrays.toString(arr));
     }
