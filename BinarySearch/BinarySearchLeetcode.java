@@ -11,7 +11,7 @@ public class BinarySearchLeetcode {
 
             // check if x is present at mid
             if (nums[mid] == target) {
-                return mid;
+                return nums[mid+1];
             }
 
             // if target greter
@@ -33,7 +33,7 @@ public class BinarySearchLeetcode {
     public static void main(String[] args) {
         BinarySearchLeetcode obj=new BinarySearchLeetcode();
         int nums[] = {2,3,4,10,40};
-        System.out.println("Element index is:"+obj.search(nums, 400));
+        System.out.println("Element index is:"+obj.search(nums, 10));
     }
 
 }

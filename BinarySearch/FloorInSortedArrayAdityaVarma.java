@@ -51,7 +51,7 @@ public class FloorInSortedArrayAdityaVarma {
     }
     public static void main(String[] args) {
         int[] array={1,2,8,10,10,12,19};
-        int target=15;
+        int target=45;
         System.out.println("Ans is:"+FloorNumber(array, target));
         System.out.println("Ans is:"+CeilNumber(array, target));
     }
