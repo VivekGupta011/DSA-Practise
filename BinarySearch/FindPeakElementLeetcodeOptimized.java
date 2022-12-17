@@ -17,7 +17,7 @@ public class FindPeakElementLeetcodeOptimized {
         
     }
     public static void main(String[] args) {
-        PeakIndexInMountainArrayLeetcode obj=new PeakIndexInMountainArrayLeetcode();
+        PeakIndexInMountainArrayLeetcodeAdityaVarma obj=new PeakIndexInMountainArrayLeetcodeAdityaVarma();
         int[] arr={5,10,20,15,2,23,90,67};
         System.out.println("Ans is:"+obj.peakIndexInMountainArray(arr));
         

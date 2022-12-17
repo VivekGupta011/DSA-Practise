@@ -2,7 +2,7 @@ package BinarySearch;
 
 import java.util.Arrays;
 
-public class FindFirstandLastLeetcodeOptimizedLeetcode {
+public class FindFirstandLastLeetcodeOptimizedLeetcodeAdityaVarma {
     public static int[] searchRange(int[] nums, int target) {
         int[] result = { -1, -1 };
         int res1 = -1;
@@ -55,3 +55,4 @@ public class FindFirstandLastLeetcodeOptimizedLeetcode {
     }
 
 }
+ 
