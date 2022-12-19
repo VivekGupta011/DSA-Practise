@@ -99,7 +99,7 @@ public class ReversedLinkedList {
         if (head == null) {
             System.out.println("the list is empty");
             return;
-        }
+        }    
         // checking linkedlist last element null otherwise give error
 
         Node secondlast = head;
@@ -143,7 +143,7 @@ public class ReversedLinkedList {
     public static void main(String[] args) {
         // empty linkedlist
         ReversedLinkedList list = new ReversedLinkedList();
-        ReversedLinkedList list1 = new ReversedLinkedList();
+        // ReversedLinkedList list1 = new ReversedLinkedList();
 
         // insertion at first node
         insert(list, 1);
@@ -151,16 +151,29 @@ public class ReversedLinkedList {
         insert(list, 3);
         insert(list, 4);
         insert(list, 5);
+        insert(list, 5);
+        insert(list, 5);
         insert(list, 6);
-        insert(list1, 0);
-        insert(list1, 1);
-        insert(list1, 0);
+        insert(list, 0);
+        insert(list, 1);
+        insert(list, 0);
+        addFirst(list, 45);
+        insert(list, 23);
         printList(list);
-        printList(list1);
+        System.out.println("Delete first element");
+        deleteFirst();
+        System.out.println("Delete last element");
+        deleteLast();
+        System.out.println("After deleting");
+        System.out.println("After duplicate method");
+        duplicate();
+        printList(list);
+
+      
 
         // print the linkedlist
         System.out.println("Reversed linkedlist:");
-        duplicate();
+        // duplicate();
         list.ReversedLinked();
         printList(list);
 
