@@ -61,24 +61,23 @@ public class ReversedLinkedList {
     }
 
     // Method for printing reversed of linkedlist
-    public  void ReversedLinked() {
-        if(head==null || head.next==null){
+    public void ReversedLinked() {
+        if (head == null || head.next == null) {
             return;
         }
 
         Node prev = head;
-        Node Current=prev.next;
-        while(Current!=null){
-            Node nextNode=Current.next;
-            Current.next=prev;
+        Node Current = prev.next;
+        while (Current != null) {  
+            Node nextNode = Current.next;
+            Current.next = prev;
             // update
-            prev=Current;
-            Current=nextNode;
+            prev = Current;
+            Current = nextNode;
             // nextNode=Current.next;
         }
-        head.next=null;
-        head=prev;
-
+        head.next = null;
+        head = prev;
 
     }
 
@@ -99,7 +98,7 @@ public class ReversedLinkedList {
         if (head == null) {
             System.out.println("the list is empty");
             return;
-        }    
+        }
         // checking linkedlist last element null otherwise give error
 
         Node secondlast = head;
@@ -146,19 +145,19 @@ public class ReversedLinkedList {
         // ReversedLinkedList list1 = new ReversedLinkedList();
 
         // insertion at first node
-        insert(list, 1);
         insert(list, 2);
-        insert(list, 3);
-        insert(list, 4);
-        insert(list, 5);
-        insert(list, 5);
-        insert(list, 5);
-        insert(list, 6);
-        insert(list, 0);
-        insert(list, 1);
-        insert(list, 0);
-        addFirst(list, 45);
-        insert(list, 23);
+        insert(list, 2);
+        insert(list, 2);
+        insert(list, 2);
+        insert(list, 2);
+        insert(list, 2);
+        insert(list, 2);
+        insert(list, 2);
+        insert(list, 2);
+        insert(list, 2);
+        insert(list, 2);
+        // addFirst(list, 45);
+        insert(list, 2);
         printList(list);
         System.out.println("Delete first element");
         deleteFirst();
@@ -168,8 +167,6 @@ public class ReversedLinkedList {
         System.out.println("After duplicate method");
         duplicate();
         printList(list);
-
-      
 
         // print the linkedlist
         System.out.println("Reversed linkedlist:");
