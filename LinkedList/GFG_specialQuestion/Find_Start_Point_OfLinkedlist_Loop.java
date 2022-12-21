@@ -1,5 +1,5 @@
-package LinkedList.GFGquestion;
-public class FindStartPointOfLinkedlistLoop {
+package LinkedList.GFG_specialQuestion;
+public class Find_Start_Point_OfLinkedlist_Loop {
 
     //Creation of new Node
     static Node head;
@@ -72,7 +72,7 @@ public class FindStartPointOfLinkedlistLoop {
         // seven.next=three;
  
          // creating object
-         FindStartPointOfLinkedlistLoop obj=new FindStartPointOfLinkedlistLoop();
+         Find_Start_Point_OfLinkedlist_Loop obj=new Find_Start_Point_OfLinkedlist_Loop();
         
          obj.printList(one);
  

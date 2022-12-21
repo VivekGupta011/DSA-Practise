@@ -1,10 +1,10 @@
-package LinkedList.GFGquestion;
+package LinkedList.GFG_specialQuestion;
 
-public class LengthOfLinkedList {
+public class Remove_Last_Element_FromLinkedlist {
 
-    
     // Creation of new Node
     static Node head;
+
     static class Node {
         int data;
         Node next;
@@ -18,8 +18,8 @@ public class LengthOfLinkedList {
 
     }
 
-     // insert the new_node at last node
-     public static void insert(int data) {
+    // insert the new_node at last node
+    public static void insert(int data) {
         // new node
         Node new_node = new Node(data);
 
@@ -27,7 +27,7 @@ public class LengthOfLinkedList {
         if (head == null) {
             head = new_node;
         } else {
-            Node last =head;
+            Node last = head;
             while (last.next != null) {
                 last = last.next;
             }
@@ -38,27 +38,9 @@ public class LengthOfLinkedList {
         // return list;
 
     }
-    
-    // length of linkedlist
-    public static int LengthLinkedList() {
 
-        if(head==null){
-            System.out.println("Linkedlist is null");
-            return -1;
-        }
-        Node temp=head;
-        int count=1;
-        while(temp.next!=null){
-            temp=temp.next;
-            ++count;
-        }
-
-        return count;
-
-    }
-
-     // Method to delete last node
-     public static void deleteLast() {
+    // Method to delete last node
+    public static void deleteLast() {
         // checking linkedlist empty or not
         if (head == null) {
             System.out.println("the list is empty");
@@ -91,22 +73,17 @@ public class LengthOfLinkedList {
     }
 
     public static void main(String[] args) {
-        
+
         insert(0);
         insert(1);
         insert(2);
         insert(3);
         insert(4);
-        insert(-5);
+        insert(5);
         printList();
         System.out.println();
-        System.out.println("Count is:"+LengthLinkedList());
+        System.out.println("After removing last element");
         deleteLast();
-        System.out.println("After removing first element");
         printList();
-        System.out.println();
-        System.out.println("Count is:"+LengthLinkedList());
     }
-
-    
 }

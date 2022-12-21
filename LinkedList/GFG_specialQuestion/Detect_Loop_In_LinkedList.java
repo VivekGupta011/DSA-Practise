@@ -1,10 +1,10 @@
-package LinkedList.GFGquestion;
+package LinkedList.GFG_specialQuestion;
 
 // Java program to detect loop in
 // given linked list using map
 import java.util.*;
 
-class DetectLoopInLinkedList{
+class Detect_Loop_In_LinkedList{
 
 // Structure for a node in Linked List
 static class Node

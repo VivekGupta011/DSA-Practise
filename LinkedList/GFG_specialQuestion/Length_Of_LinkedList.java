@@ -1,7 +1,8 @@
-package LinkedList.GFGquestion;
+package LinkedList.GFG_specialQuestion;
 
-public class RemoveFirstElementFromLinkedlist {
+public class Length_Of_LinkedList {
 
+    
     // Creation of new Node
     static Node head;
     static class Node {
@@ -37,15 +38,42 @@ public class RemoveFirstElementFromLinkedlist {
         // return list;
 
     }
-
-    public static void RemoveFirst() {
+    
+    // length of linkedlist
+    public static int LengthLinkedList() {
 
         if(head==null){
             System.out.println("Linkedlist is null");
+            return -1;
+        }
+        Node temp=head;
+        int count=1;
+        while(temp.next!=null){
+            temp=temp.next;
+            ++count;
+        }
+
+        return count;
+
+    }
+
+     // Method to delete last node
+     public static void deleteLast() {
+        // checking linkedlist empty or not
+        if (head == null) {
+            System.out.println("the list is empty");
             return;
         }
-        head=head.next;
+        // checking linkedlist last element null otherwise give error
 
+        Node secondlast = head;
+        Node lastNode = head.next;
+        while (lastNode.next != null) {
+            secondlast = secondlast.next;
+            lastNode = lastNode.next;
+        }
+
+        secondlast.next = null;
     }
 
     // Method to print the linkedlist
@@ -69,12 +97,16 @@ public class RemoveFirstElementFromLinkedlist {
         insert(2);
         insert(3);
         insert(4);
-        insert(5);
+        insert(-5);
         printList();
         System.out.println();
+        System.out.println("Count is:"+LengthLinkedList());
+        deleteLast();
         System.out.println("After removing first element");
-        RemoveFirst();
         printList();
+        System.out.println();
+        System.out.println("Count is:"+LengthLinkedList());
     }
 
+    
 }

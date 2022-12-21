@@ -1,6 +1,6 @@
-package LinkedList.GFGquestion;
+package LinkedList.GFG_specialQuestion;
 
-public class DetectLoopInLinkedListFloydsCycleDetection {
+public class Detect_Loop_In_LinkedList_Floyds_Cycle_Detection {
 
     //Creation of new Node
     static Node head;
@@ -66,7 +66,7 @@ public class DetectLoopInLinkedListFloydsCycleDetection {
         seven.next=three;
  
          // creating object
-         DetectLoopInLinkedListFloydsCycleDetection obj=new DetectLoopInLinkedListFloydsCycleDetection();
+         Detect_Loop_In_LinkedList_Floyds_Cycle_Detection obj=new Detect_Loop_In_LinkedList_Floyds_Cycle_Detection();
         
         //  obj.printList(one);
  

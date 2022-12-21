@@ -1,6 +1,6 @@
-package LinkedList.GFGquestion;
+package LinkedList.GFG_specialQuestion;
 
-public class RemoveLastElementFromLinkedlist {
+public class Remove_Middle_Element_Of_LinkedList {
 
     // Creation of new Node
     static Node head;
@@ -40,22 +40,23 @@ public class RemoveLastElementFromLinkedlist {
     }
 
     // Method to delete last node
-    public static void deleteLast() {
-        // checking linkedlist empty or not
+    public static void Remove_Middle_Of_linkedList() {
+
         if (head == null) {
-            System.out.println("the list is empty");
+            System.out.println("Linkedlist is null");
             return;
         }
-        // checking linkedlist last element null otherwise give error
+        
 
-        Node secondlast = head;
-        Node lastNode = head.next;
-        while (lastNode.next != null) {
-            secondlast = secondlast.next;
-            lastNode = lastNode.next;
+        // second pointer start from head->next->next
+        Node first = head;
+        Node second = head.next.next;
+        while (second != null && second.next != null) {
+            first = first.next;
+            second = second.next.next;
         }
-
-        secondlast.next = null;
+        first.next=first.next.next;
+        System.out.println("Middle element remove!");
     }
 
     // Method to print the linkedlist
@@ -74,16 +75,17 @@ public class RemoveLastElementFromLinkedlist {
 
     public static void main(String[] args) {
 
-        insert(0);
         insert(1);
         insert(2);
-        insert(3);
-        insert(4);
-        insert(5);
+        // insert(3);
+        // insert(4);
+        // insert(5);
+        // insert(6);
+        // insert(7);
         printList();
         System.out.println();
-        System.out.println("After removing last element");
-        deleteLast();
+        Remove_Middle_Of_linkedList();
         printList();
     }
+
 }

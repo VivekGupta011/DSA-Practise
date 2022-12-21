@@ -1,6 +1,6 @@
-package LinkedList.GFGquestion;
+package LinkedList.GFG_specialQuestion;
 
-public class RemoveLoopInLinkedList {
+public class Remove_Loop_InLinkedList {
 
     // Creation of new Node
     static Node head;
@@ -98,7 +98,7 @@ public class RemoveLoopInLinkedList {
         seven.next=three;
 
         // creating object
-        RemoveLoopInLinkedList obj = new RemoveLoopInLinkedList();
+        Remove_Loop_InLinkedList obj = new Remove_Loop_InLinkedList();
         // obj.printList(one);
         System.out.println("After Removing loop from linkedlist:");
         obj.removeLoop(one);

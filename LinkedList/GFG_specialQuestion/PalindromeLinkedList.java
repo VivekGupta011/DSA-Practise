@@ -1,4 +1,4 @@
-package LinkedList.GFGquestion;
+package LinkedList.GFG_specialQuestion;
 
 import java.util.Stack;
 
