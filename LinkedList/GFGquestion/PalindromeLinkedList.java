@@ -6,7 +6,6 @@ public class PalindromeLinkedList {
 
     //Creation of new Node
     static Node head;
-    static Node tail;
 
     static class Node {
         int data;
