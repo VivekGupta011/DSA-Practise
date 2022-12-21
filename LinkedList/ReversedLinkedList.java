@@ -146,18 +146,18 @@ public class ReversedLinkedList {
 
         // insertion at first node
         insert(list, 2);
-        insert(list, 2);
-        insert(list, 2);
-        insert(list, 2);
-        insert(list, 2);
-        insert(list, 2);
-        insert(list, 2);
-        insert(list, 2);
-        insert(list, 2);
-        insert(list, 2);
-        insert(list, 2);
+        insert(list, 3);
+        insert(list, 5);
+        insert(list, 6);
+        insert(list, 7);
+        insert(list, 8);
+        insert(list, 9);
+        insert(list, 12);
+        insert(list, 22);
+        insert(list, 32);
+        insert(list, 25);
         // addFirst(list, 45);
-        insert(list, 2);
+        insert(list, 29);
         printList(list);
         System.out.println("Delete first element");
         deleteFirst();
@@ -172,6 +172,9 @@ public class ReversedLinkedList {
         System.out.println("Reversed linkedlist:");
         // duplicate();
         list.ReversedLinked();
+        printList(list);
+        System.out.println("delete first element");
+        deleteFirst();
         printList(list);
 
     }

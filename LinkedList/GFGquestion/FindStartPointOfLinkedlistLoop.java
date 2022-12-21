@@ -27,6 +27,7 @@ public class FindStartPointOfLinkedlistLoop {
             // checking contain cycle or not
             if(slow==fast){
                 fast=head;
+                // extra condition for  return loop point
                 while(slow!=fast){
                     slow=slow.next;
                     fast=fast.next;
@@ -68,12 +69,12 @@ public class FindStartPointOfLinkedlistLoop {
          six.next=seven;
 
         //  creating cycle loop in linkedlist
-        seven.next=three;
+        // seven.next=three;
  
          // creating object
          FindStartPointOfLinkedlistLoop obj=new FindStartPointOfLinkedlistLoop();
         
-        //  obj.printList(one);
+         obj.printList(one);
  
          // checking palindrome or not
          Node result=obj.CycleDetect(one);
