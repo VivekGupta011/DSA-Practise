@@ -77,11 +77,11 @@ public class Remove_Middle_Element_Of_LinkedList {
 
         insert(1);
         insert(2);
-        // insert(3);
-        // insert(4);
-        // insert(5);
-        // insert(6);
-        // insert(7);
+        insert(3);
+        insert(4);
+        insert(5);
+        insert(6);
+        insert(7);
         printList();
         System.out.println();
         Remove_Middle_Of_linkedList();
