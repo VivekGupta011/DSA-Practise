@@ -1,4 +1,4 @@
-package LinkedList.GFG_specialQuestion;
+package LinkedList.GFG_and_Leetcode_specialQuestion;
 
 public class Detect_Loop_In_LinkedList_Floyds_Cycle_Detection {
 

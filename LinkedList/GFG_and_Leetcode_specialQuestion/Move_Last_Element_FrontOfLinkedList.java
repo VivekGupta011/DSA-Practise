@@ -1,4 +1,4 @@
-package LinkedList.GFG_specialQuestion;
+package LinkedList.GFG_and_Leetcode_specialQuestion;
 
 public class Move_Last_Element_FrontOfLinkedList {
    

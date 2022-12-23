@@ -1,4 +1,4 @@
-package LinkedList.GFG_specialQuestion;
+package LinkedList.GFG_and_Leetcode_specialQuestion;
 public class Find_Start_Point_OfLinkedlist_Loop {
 
     //Creation of new Node

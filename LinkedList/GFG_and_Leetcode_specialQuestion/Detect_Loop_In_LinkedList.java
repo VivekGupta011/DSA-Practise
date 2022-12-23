@@ -1,4 +1,4 @@
-package LinkedList.GFG_specialQuestion;
+package LinkedList.GFG_and_Leetcode_specialQuestion;
 
 // Java program to detect loop in
 // given linked list using map

@@ -1,4 +1,4 @@
-package LinkedList.GFG_specialQuestion;
+package LinkedList.GFG_and_Leetcode_specialQuestion;
 
 public class Length_Of_LinkedList {
 
@@ -8,7 +8,7 @@ public class Length_Of_LinkedList {
     static class Node {
         int data;
         Node next;
-        public String key;
+       
 
         // constructor
         Node(int d) {

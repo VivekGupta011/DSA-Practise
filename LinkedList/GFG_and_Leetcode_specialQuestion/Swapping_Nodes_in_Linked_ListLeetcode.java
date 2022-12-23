@@ -1,4 +1,4 @@
-package LinkedList.GFG_specialQuestion;
+package LinkedList.GFG_and_Leetcode_specialQuestion;
 
 public class Swapping_Nodes_in_Linked_ListLeetcode {
     // Creation of new Node
@@ -37,7 +37,8 @@ public class Swapping_Nodes_in_Linked_ListLeetcode {
         // return list;
 
     }
-    //  Good job Vivek
+
+    // Good job Vivek
     // Swapping nth Node
     public static void Swapping_nth_NodeFrom_Linkedlist(int n) {
 
@@ -69,7 +70,7 @@ public class Swapping_Nodes_in_Linked_ListLeetcode {
 
         // for swapping
         int temp = FirstTemp.data;
-        FirstTemp.data= SecondTemp.data;
+        FirstTemp.data = SecondTemp.data;
         SecondTemp.data = temp;
 
     }

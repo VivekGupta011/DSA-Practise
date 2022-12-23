@@ -1,4 +1,4 @@
-package LinkedList.GFG_specialQuestion;
+package LinkedList.GFG_and_Leetcode_specialQuestion;
 
 public class Remove_First_ElementFromLinkedlist {
 
@@ -63,7 +63,6 @@ public class Remove_First_ElementFromLinkedlist {
     }
 
     public static void main(String[] args) {
-        
         insert(0);
         insert(1);
         insert(2);

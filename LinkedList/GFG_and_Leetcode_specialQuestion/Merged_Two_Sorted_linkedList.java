@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.GFG_and_Leetcode_specialQuestion;
 import java.util.*;
 
 //Creation of Node
@@ -12,7 +12,7 @@ class Node {
     }
 }
 
-class MergedTwoSort {
+class Merged_Two_Sorted_linkedList {
     Node head;
 
     public void addToTheLast(Node node) {
@@ -44,8 +44,8 @@ class MergedTwoSort {
         // llist1: 5->10->15,
         // llist2: 2->3->20
 
-        MergedTwoSort llist1 = new MergedTwoSort();
-        MergedTwoSort llist2 = new MergedTwoSort();
+        Merged_Two_Sorted_linkedList llist1 = new Merged_Two_Sorted_linkedList();
+        Merged_Two_Sorted_linkedList llist2 = new Merged_Two_Sorted_linkedList();
 
         // Node head1 = new Node(5);
         // llist1.addToTheLast(new Node(5));
@@ -115,3 +115,4 @@ class Gfg {
         return dummyNode.next;
     }
 }
+
