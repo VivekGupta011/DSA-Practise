@@ -1,4 +1,4 @@
-  package LinkedList.DoublyLinked;
+package LinkedList.DoublyLinked;
 
 public class AddFirst {
     // head of list
@@ -56,7 +56,7 @@ public class AddFirst {
     public static void Display(){
         Node temp=head;
         Node last=null;
-        while(temp!=null){
+           while(temp!=null){
             System.out.print(temp.data+"->");
             last=temp;
             temp=temp.next;
@@ -82,7 +82,6 @@ public class AddFirst {
         addlast(8);
         addlast(9);
         Display();
-
     }
 
 }
