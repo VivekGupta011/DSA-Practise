@@ -1,6 +1,6 @@
 package LinkedList.DoublyLinked;
 
-public class DeleteFirstNode {
+public class DeleteFirst_Last_Node {
     static Node head; // head of list
 
     /* Doubly Linked list Node */
@@ -88,11 +88,11 @@ public class DeleteFirstNode {
     public void RemoveLast() {
         Node temp = head;
         while (temp.next != null) {
-            temp = temp.next ;
+            temp = temp.next;
         }
-        
-        temp.prev.next=temp.next;
-        temp.prev=null;
+
+        temp.prev.next = temp.next;
+        temp.prev = null;
 
     }
 
@@ -110,13 +110,13 @@ public class DeleteFirstNode {
 
         // System.out.println("Traversal in reverse direction");
         // while (last != null) {
-        //     System.out.print(last.data + " ");
-        //     last = last.prev;
+        // System.out.print(last.data + " ");
+        // last = last.prev;
         // }
     }
 
     public static void main(String[] args) {
-        DeleteFirstNode Dll = new DeleteFirstNode();
+        DeleteFirst_Last_Node Dll = new DeleteFirst_Last_Node();
 
         Dll.append(1);
         Dll.append(2);
@@ -134,7 +134,6 @@ public class DeleteFirstNode {
         Dll.printlist(Dll.head);
         Dll.RemoveLast();
         Dll.printlist(Dll.head);
-
 
     }
 
