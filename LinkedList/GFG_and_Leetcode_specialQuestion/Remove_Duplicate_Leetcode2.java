@@ -41,25 +41,25 @@ public class Remove_Duplicate_Leetcode2 {
 
     // use basic code for that
     public static void deleteDuplicates() {
-        Node Temp=new Node(0);
-        Temp.next=head;
-        System.out.println("Temp data:"+Temp.data);
-        Node CurrNode = head;
-        while (CurrNode != null && CurrNode.next != null) {
-            if(CurrNode.data==CurrNode.next.next.data){
-                Temp.next=CurrNode.next.next.next;
-            }
-            if (CurrNode.data == CurrNode.next.data) {
-                Temp.next = CurrNode.next.next;
+        Node temp = new Node(0);
+        temp.next = head;
+
+        Node prev = temp;
+        while (prev.next != null && prev.next.next != null) {
+            if (prev.next.data == prev.next.next.data) {
+                int dup = prev.next.data;
+                while (prev.next != null && prev.next.data == dup) {
+                    prev.next = prev.next.next;
+                }
             } else {
-                Temp=CurrNode;
-                CurrNode = CurrNode.next;
+                prev = prev.next;
             }
+
         }
-        // return CurrNode;
+
+        // return temp.next;
 
     }
-    
 
     // Method to print the linkedlist
     public static void printList() {
@@ -88,7 +88,6 @@ public class Remove_Duplicate_Leetcode2 {
         System.out.println("Duplicate Remove!");
         System.out.println();
         deleteDuplicates();
-        System.out.println();
         printList();
     }
 
