@@ -12,7 +12,7 @@ public class Find_Maximum_three_productOptimized {
     public static void main(String[] args) {
         int[] array={-13, -12, -11, -1, 0, 2, 3, 4, 5};
         System.out.println("Ans is:"+maximumProduct(array));
-        System.out.println(Math.max(5, 65));
+        
         
     }
     
