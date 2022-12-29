@@ -1,6 +1,6 @@
 package Sliding_Window;
 
-public class Maximum_Sum_of_Subarray_of_size_k {
+public class Maximum_Sum_of_Subarray_of_size_k_Brute_Force {
     static int maxSum(int arr[], int n, int k){
 
         // initialize result
@@ -22,7 +22,7 @@ public class Maximum_Sum_of_Subarray_of_size_k {
 
     public static void main(String[] args) {
         int arr[] = { 1, 4, 2, 10, 2, 3, 1, 0, 20 };
-        int k = 4;
+        int k = 6;
         int n = arr.length;
         System.out.println(maxSum(arr, n, k));
         
