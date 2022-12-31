@@ -5,9 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Union_Array_UsingTwo_Pointer {
-
     // Two pointer approach
-
     public static void Union_of_array(int[] nums1, int[] nums2) {
         int start1 = 0;
         int start2 = 0;
