@@ -23,6 +23,8 @@ public class MajorityElement {
             }
         }
 
+        System.out.println("Ans is:"+map);
+
         // if not found
         if(flag==0){
             System.out.print("No majority element!");
@@ -33,7 +35,6 @@ public class MajorityElement {
     public static void main(String[] args) {
         int[] a= new int[]{2, 2, 3, 1, 3, 2, 1, 1};
         MajorityElementt(a);
-
     }
 
 }
