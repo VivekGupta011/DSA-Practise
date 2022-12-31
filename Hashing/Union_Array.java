@@ -24,6 +24,7 @@ public class Union_Array {
         while(i.hasNext()){
             System.out.print(i.next()+" ");
         }
+       
 
     }
 
