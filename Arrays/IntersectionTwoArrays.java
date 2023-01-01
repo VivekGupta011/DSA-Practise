@@ -1,5 +1,4 @@
-package Arrays;
-
+package Arrays;  
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -23,7 +22,7 @@ public class IntersectionTwoArrays {
                 }
             }
 
-        }else{
+        } else {
             // first loop
             for (int i = 0; i < nums2.length; i++) {
                 for (int j = 0; j < nums1.length; j++) {
@@ -46,7 +45,7 @@ public class IntersectionTwoArrays {
         return result;
 
     }
-
+    
     // optimized solution
     public static int[] intersectionn(int[] nums1, int[] nums2) {
         HashSet<Integer> set1 = new HashSet<Integer>();
