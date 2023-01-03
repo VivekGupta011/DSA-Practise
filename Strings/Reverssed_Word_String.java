@@ -1,5 +1,7 @@
 package Strings;
 
+import java.util.Arrays;
+
 public class Reverssed_Word_String {
 
     public static String reverseWords(String s) {
@@ -23,6 +25,8 @@ public class Reverssed_Word_String {
 
     public static void main(String[] args) {
         String words="the sky is blue";
+        // String[] wrd=words.split("u");
+        // System.out.println(Arrays.toString(wrd));
         System.out.println("Ans is:"+reverseWords(words));
       
     }
