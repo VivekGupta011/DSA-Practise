@@ -8,7 +8,7 @@ public class Remove_Last_Element_FromLinkedlist {
     static class Node {
         int data;
         Node next;
-        public String key;
+        // public String key;
 
         // constructor
         Node(int d) {
