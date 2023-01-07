@@ -96,13 +96,14 @@ public class Level_Order_Traversal {
             ans.add(currLevel);
 
         }
-       
+
+        // as per the leetcode question requirement
         List<List<Integer>> ansReverse = new ArrayList<>();
         // for loop for reversing list data
-        for(int i=ans.size()-1;i>=0;i--){
+        for (int i = ans.size() - 1; i >= 0; i--) {
             ansReverse.add(ans.get(i));
         }
-       
+
         return ansReverse;
 
     }
