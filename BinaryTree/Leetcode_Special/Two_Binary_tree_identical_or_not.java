@@ -1,68 +1,73 @@
 package BinaryTree.Leetcode_Special;
 
 public class Two_Binary_tree_identical_or_not {
-    // creating root node
-    Node root;
-
-    static class Node {
-        int key;
-        Node left, right;
-
-        public Node(int item) {
-            key = item;
-            left = right = null;
-        }
-    }
+        // for creating two binary tree
+        static class Node {
+            int data;
+            Node left;
+            Node right;
+        };
     
-
-    int max=0;
-    // Method for printing height of tree
-    public static int height(Node root) {
-        if (root == null) {
-            return 0;
+        // for creating function to create a new node
+        static Node newNode(int data) {
+            Node node = new Node();
+            node.data = data;
+            node.left = null;
+            node.right = null;
+            return node;
         }
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
-        return Math.max(leftHeight, rightHeight) + 1;
-    }
-
-    // find two binary tree identical or not 
-    public boolean isSameTree(TreeNode p, TreeNode q) {
-        
-    }
-
-    // Traverse tree
-    public void traverseTree(Node node) {
-        if (node != null) {
-            System.out.print(" " + node.key);
-            traverseTree(node.left);
-            traverseTree(node.right);
+    
+        // check Two tree identical or not
+        public static boolean isSameTree(Node p, Node q) {
+            if (p == null && q == null) {
+                return true;
+            } else if (p == null || q == null) {
+                return false;
+            }
+            if (p.data == q.data) {
+                return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+            } else {
+                return false;
+            }
         }
-    }
-
-    public static void main(String[] args) {
-        // creating an object of Binary Tree
-        Two_Binary_tree_identical_or_not tree = new Two_Binary_tree_identical_or_not();
-
-        // create nodes of the tree
-        tree.root = new Node(1);
-        tree.root.left = new Node(2);
-        tree.root.right = new Node(3);
-        // tree.root.right.left = new Node(6);
-        tree.root.left.right = new Node(5);
-        tree.root.left.left = new Node(4);
-        // tree.root.right.right.left= new Node(4);
-        // tree.root.left.left=new Node(2);
-        // tree.root.left.right=new Node(6);
-        // tree.root.left.right.left=new Node(5);
-        // tree.root.left.right.right=new Node(11);
-
-        System.out.print("\nBinary Tree: ");
-        tree.traverseTree(tree.root);
-        System.out.println();
-        System.out.println("Diameter:"+Diameter(tree.root));
-
-    }
+    
+        // Function to perform DFS traversal
+        public static void inorder(Node root) {
+            if (root != null) {
+                System.out.print(root.data + " ");
+                inorder(root.left);
+                inorder(root.right);
+            }
+        }
+    
+        public static void main(String[] args) {
+    
+            // for first binary tree
+            Node root1 = newNode(5);
+            root1.left = newNode(3);
+            root1.right = newNode(8);
+            root1.left.left = newNode(2);
+            root1.left.right = newNode(4);
+            // for second binary tree
+            
+            Node root2 = newNode(5);
+            root2.left = newNode(3);
+            root2.right = newNode(8);
+            root2.left.left = newNode(2);
+            root2.left.right = newNode(4);
+    
+            // for first binary tree
+            System.out.println("first:");
+            inorder(root1);
+            System.out.println();
+            System.out.println("Second:");
+            inorder(root2);
+    
+            // sout
+            System.out.println("For same tree:");
+            System.out.println("Ans is:" + isSameTree(root1, root2));
+    
+        }
 
     
 }
