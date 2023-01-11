@@ -5,8 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class Find_Largest_Value_in_Each_Tree_Row {
-
+public class Sum_of_Left_Leaves_level_order_traversal {
     // for creating two binary tree
     static class Node {
         int data;
@@ -24,21 +23,23 @@ public class Find_Largest_Value_in_Each_Tree_Row {
     }
 
     // Give largest value in form bfs
-    public static List<Integer> largestValues(Node root)  {
-         
+    public static int sumOfLeftLeaves(Node root) {
+
         // creating Arraylist in java
-        List<Integer> result=new ArrayList<>();
+        // List<Integer> result=new ArrayList<>();
         // creating queue
         Queue<Node> list = new LinkedList<>();
         list.add(root);
+        int original=root.data;
+        int result = 0;
 
         while (!list.isEmpty()) {
             int size = list.size();
-            int largestValue=Integer.MIN_VALUE;
-            for (int i = 0; i < size;i++) {
+            int largestValue = Integer.MIN_VALUE;
+            for (int i = 0; i < size; i++) {
                 root = list.poll();
-                if(largestValue<root.data){
-                    largestValue=root.data;
+                if (i == 0) {
+                    result = result + root.data;
                 }
                 if (root.left != null) {
                     list.add(root.left);
@@ -47,9 +48,9 @@ public class Find_Largest_Value_in_Each_Tree_Row {
                     list.add(root.right);
                 }
             }
-            result.add(largestValue);
+
         }
-        return result;
+        return result-original;
     }
 
     // Function to perform DFS traversal
@@ -80,8 +81,10 @@ public class Find_Largest_Value_in_Each_Tree_Row {
         // sout
         System.out.println("For min depth tree:");
         System.out.println();
-        System.out.println("Ans is:" + largestValues(root1));
-
+        System.out.println("Ans is:" + sumOfLeftLeaves(root1));
+        Queue<Node> list1 = new LinkedList<>();
+        list1.add(null);
+        list1.add(null);
+        System.out.println("size:"+list1.size());
     }
-    
 }
