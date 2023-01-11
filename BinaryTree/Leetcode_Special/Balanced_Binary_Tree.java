@@ -1,5 +1,7 @@
 package BinaryTree.Leetcode_Special;
 
+import javax.naming.spi.DirStateFactory.Result;
+
 public class Balanced_Binary_Tree {
 
     // creating root node
@@ -14,40 +16,32 @@ public class Balanced_Binary_Tree {
             left = right = null;
         }
     }
-    
 
-    int max=0;
-    // Method for printing height of tree
-    public static int height(Node root) {
+    // checking tree is balanced or not
+    static int result = 1;
+    // cheking balnced or not
+    public static boolean isBalanced(Node root){
+        result=1;
+        solve(root);
+        if(result==1){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
+
+    public static int solve(Node root) {
         if (root == null) {
             return 0;
         }
-        int leftHeight = height(root.left);
-        int rightHeight = height(root.right);
+        int leftHeight = solve(root.left);
+        int rightHeight = solve(root.right);
+        if (Math.abs(leftHeight - rightHeight) > 1)
+            result = 0;
         return Math.max(leftHeight, rightHeight) + 1;
     }
-
-
-
-
     
-
-    // Balanced Binary tree
-    public static boolean isBalanced(Node root) {
-        return dfsHeight(root)!=-1;
-    }
-    public static int dfsHeight(Node root){
-        if(root==null) return 0;
-
-        int leftHeight=dfsHeight(root.left);
-        int rightHeight=dfsHeight(root.right);
-
-        // cheking condition for balanced tree
-        if(Math.abs(leftHeight-rightHeight)>1) return -1;
-        System.out.println("height:"+leftHeight);
-        System.out.println("rheight:"+rightHeight);
-        return Math.max(leftHeight, rightHeight)+1;
-    }
 
     // Traverse tree
     public void traverseTree(Node node) {
@@ -64,9 +58,9 @@ public class Balanced_Binary_Tree {
 
         // create nodes of the tree
         tree.root = new Node(1);
-        // tree.root.left = new Node(2);
+        tree.root.left = new Node(2);
         tree.root.right = new Node(3);
-        tree.root.right.right = new Node(6);
+        // tree.root.right.right = new Node(6);
         // tree.root.left.right = new Node(5);
         // tree.root.left.left = new Node(4);
         // tree.root.right.right.left= new Node(4);
@@ -78,9 +72,8 @@ public class Balanced_Binary_Tree {
         System.out.print("\nBinary Tree: ");
         tree.traverseTree(tree.root);
         System.out.println();
-        System.out.println("Diameter:"+isBalanced(tree.root));
+        System.out.println("balanced:" + isBalanced(tree.root));
 
     }
 
-    
 }

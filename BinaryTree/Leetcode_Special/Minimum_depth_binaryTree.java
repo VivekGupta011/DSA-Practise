@@ -1,6 +1,10 @@
 package BinaryTree.Leetcode_Special;
 
-public class Two_Binary_tree_identical_or_not {
+import java.lang.constant.DirectMethodHandleDesc.Kind;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Minimum_depth_binaryTree {
     // for creating two binary tree
     static class Node {
         int data;
@@ -16,20 +20,34 @@ public class Two_Binary_tree_identical_or_not {
         node.right = null;
         return node;
     }
-    
 
     // check Two tree identical or not
-    public static boolean isSameTree(Node p, Node q) {
-        if (p == null && q == null) {
-            return true;
-        } else if (p == null || q == null) {
-            return false;
+    public static int minDepth(Node root) {
+
+        if(root==null){
+            return 0;
         }
-        if (p.data == q.data) {
-            return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
-        } else {
-            return false;
+        // creating queue
+        Queue<Node> list = new LinkedList<>();
+        list.add(root);
+        int depth = 1;
+        while (!list.isEmpty()) {
+            int size = list.size();
+             root= list.poll();
+            for (int i = 0; i < size; i++) {
+                if (root.left == null && root.right == null) {
+                    return depth;
+                }
+                if (root.left != null) {
+                    list.add(root.left);
+                }
+                if (root.right != null) {
+                    list.add(root.right);
+                }
+            }
+            depth++;
         }
+        return 0;
     }
 
     // Function to perform DFS traversal
@@ -57,17 +75,12 @@ public class Two_Binary_tree_identical_or_not {
         root2.left.left = newNode(2);
         root2.left.right = newNode(4);
 
-        // for first binary tree
-        System.out.println("first:");
-        inorder(root1);
-        System.out.println();
-        System.out.println("Second:");
-        inorder(root2);
+     
 
         // sout
-        System.out.println("For same tree:");
-        System.out.println("Ans is:" + isSameTree(root1, root2));
+        System.out.println("For min depth tree:");
+        System.out.println();
+        System.out.println("Ans is:" + minDepth(root1));
 
     }
-
 }
