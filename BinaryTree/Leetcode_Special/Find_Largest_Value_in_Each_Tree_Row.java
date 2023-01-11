@@ -1,10 +1,12 @@
 package BinaryTree.Leetcode_Special;
 
-import java.lang.constant.DirectMethodHandleDesc.Kind;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
-public class Minimum_depth_binaryTree {
+public class Find_Largest_Value_in_Each_Tree_Row {
+
     // for creating two binary tree
     static class Node {
         int data;
@@ -22,21 +24,21 @@ public class Minimum_depth_binaryTree {
     }
 
     // check min depth of binary tree
-    public static int minDepth(Node root) {
-
-        if (root == null) {
-            return 0;
-        }
+    public static List<Integer> largestValues(Node root)  {
+         
+        // creating Arraylist in java
+        List<Integer> result=new ArrayList<>();
         // creating queue
         Queue<Node> list = new LinkedList<>();
         list.add(root);
-        int depth = 1;
+
         while (!list.isEmpty()) {
             int size = list.size();
+            int largestValue=Integer.MIN_VALUE;
             for (int i = 0; i < size;i++) {
                 root = list.poll();
-                if (root.left == null && root.right == null) {
-                    return depth;
+                if(largestValue<root.data){
+                    largestValue=root.data;
                 }
                 if (root.left != null) {
                     list.add(root.left);
@@ -45,9 +47,9 @@ public class Minimum_depth_binaryTree {
                     list.add(root.right);
                 }
             }
-            depth++;
+            result.add(largestValue);
         }
-        return 0;
+        return result;
     }
 
     // Function to perform DFS traversal
@@ -78,7 +80,8 @@ public class Minimum_depth_binaryTree {
         // sout
         System.out.println("For min depth tree:");
         System.out.println();
-        System.out.println("Ans is:" + minDepth(root1));
+        System.out.println("Ans is:" + largestValues(root1));
 
     }
+    
 }
