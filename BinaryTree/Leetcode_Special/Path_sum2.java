@@ -1,5 +1,7 @@
 package BinaryTree.Leetcode_Special;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -28,6 +30,9 @@ public class Path_sum2 {
             return result;
         }
         dfs(root,targetSum,new ArrayList<>());
+        System.out.println("before:"+result);
+        Collections.swap(result,0,1);
+        System.out.println("After:"+result);
         return result;
     }
 
@@ -38,7 +43,7 @@ public class Path_sum2 {
         path.add(root.data);
         targetSum=targetSum-root.data;
 
-        if(targetSum==0 && root.left==null &&root.right==null){
+        if(targetSum==0 && root.left==null && root.right==null){
             result.add(path);
         }
 
