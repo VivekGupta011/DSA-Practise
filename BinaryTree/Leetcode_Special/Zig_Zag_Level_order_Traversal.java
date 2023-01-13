@@ -25,19 +25,16 @@ public class Zig_Zag_Level_order_Traversal {
 
     // Zig zag level order traversal
     public static List<List<Integer>> zigzagLevelOrder(Node root) {
+
+        Queue<Node> q = new LinkedList<Node>();
         List<List<Integer>> result = new LinkedList<>();
-
-        if (root == null)
-            return result;
-
+        if (root == null) return result;
         // flag case
         boolean flag = false;
-
-        // Creating a Queue
-        Queue<Node> q = new LinkedList<Node>();
         q.add(root);
         while (q.size() > 0) {
-            LinkedList<Integer> list=new LinkedList<>();
+            // Creating a Queue
+            LinkedList<Integer> list = new LinkedList<>();
             int size = q.size();
             for (int i = 0; i < size; i++) {
                 Node node = q.poll();
@@ -48,12 +45,12 @@ public class Zig_Zag_Level_order_Traversal {
                 if (flag) {
                     list.addFirst(node.data);
                 }
-                if(!flag){
+                if (!flag) {
                     list.addLast(node.data);
                 }
             }
             result.add(list);
-            flag=!flag;
+            flag = !flag;
         }
 
         return result;
@@ -104,7 +101,7 @@ public class Zig_Zag_Level_order_Traversal {
         obj.add("Vivek");
         obj.add("Gupta");
         System.out.println("Arraylist:" + obj);
-        System.out.println("Ans is:"+zigzagLevelOrder(root1));
+        System.out.println("Ans is:" + zigzagLevelOrder(root1));
     }
 
 }
