@@ -1,11 +1,9 @@
 package BinaryTree.Leetcode_Special;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-public class Binary_Tree_Right_Side_View {
+public class Path_sum2 {
     // for creating two binary tree
     static class Node {
         int data;
@@ -22,18 +20,32 @@ public class Binary_Tree_Right_Side_View {
         return node;
     }
 
-    // Give right side view
-    public static List<Integer> rightSideView(Node root) {
-        // creating a arraylist
-        List<Integer> list = new ArrayList<>();
-        if (root != null) {
-            list.add(root.data);
-            rightSideView(root.right);
-        }
-        return list;
+    // giving the sum of all node equal to target
+    List<List<Integer>> result=new ArrayList<>();
+    public List<List<Integer>> pathSum(Node root, int targetSum) {
 
+        if(root==null){
+            return result;
+        }
+        dfs(root,targetSum,new ArrayList<>());
+        return result;
     }
 
+    public void dfs(Node root,int targetSum,ArrayList<Integer> path){
+        if(root==null){
+            return;
+        }
+        path.add(root.data);
+        targetSum=targetSum-root.data;
+
+        if(targetSum==0 && root.left==null &&root.right==null){
+            result.add(path);
+        }
+
+        dfs(root.left, targetSum, new ArrayList<>(path));
+        dfs(root.right, targetSum, new ArrayList<>(path));
+    }
+   
     // Function to perform DFS traversal
     public static void inorder(Node root) {
         if (root != null) {
@@ -43,14 +55,14 @@ public class Binary_Tree_Right_Side_View {
         }
     }
 
-    
-
     public static void main(String[] args) {
+
+        Path_sum2 obj=new Path_sum2();
 
         // for first binary tree
         Node root1 = newNode(5);
         root1.left = newNode(3);
-        root1.right = newNode(8);
+        root1.right = newNode(7);
         root1.left.left = newNode(2);
         root1.left.right = newNode(4);
         // for second binary tree
@@ -64,10 +76,12 @@ public class Binary_Tree_Right_Side_View {
         // sout
         System.out.println("For min depth tree:");
         System.out.println();
-        // System.out.println("Ans is:" + sumOfLeftLeaves(root1));
+        System.out.println("Ans is:" +obj.pathSum(root1, 12));
         Queue<Node> list1 = new LinkedList<>();
         list1.add(null);
         list1.add(null);
-        System.out.println("size:" + list1.size());
+        System.out.println("size:"+list1.size());
     }
+    
 }
+

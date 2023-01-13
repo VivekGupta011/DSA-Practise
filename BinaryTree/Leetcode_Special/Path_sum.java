@@ -60,7 +60,7 @@ public class Path_sum {
         // sout
         System.out.println("For min depth tree:");
         System.out.println();
-        System.out.println("Ans is:" + sumOfLeftLeaves(root1));
+        // System.out.println("Ans is:" + sumOfLeftLeaves(root1));
         Queue<Node> list1 = new LinkedList<>();
         list1.add(null);
         list1.add(null);
