@@ -1,11 +1,9 @@
 package BinaryTree.Leetcode_Special;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-
-public class Sum_of_Left_Leaves_level_order_traversal {
+public class Is_Even_Odd {
     // for creating two binary tree
     static class Node {
         int data;
@@ -22,36 +20,38 @@ public class Sum_of_Left_Leaves_level_order_traversal {
         return node;
     }
 
-
-
-    public static boolean IsHelper(Node root){
-        return root!=null && root.left==null && root.right==null; 
-    }
     // Give largest value in form bfs
-    public static int sumOfLeftLeaves(Node root) {
+    public static boolean isEvenOddTree(Node root)  {
+         
+        if(root==null) return true;
+        // creating queue
+        Queue<Node> list = new LinkedList<>();
+        list.add(root);
+        boolean evenLevel=true;
 
-        if(root==null) return 0;
-        int result = 0;
-        Queue<Node> q = new LinkedList<Node>();
-        q.add(root);
-
-        while (q.size() > 0) {
-            // Creating a Queue
-            int size = q.size();
-            for (int i = 0; i < size; i++) {
-                Node node = q.poll();
-                if (IsHelper(node.left)) {
-                    result = result + node.left.data;
+        while (list.size()>0) {
+            int size = list.size();
+            // for changing level in binary tree as a even and odd
+            int temp=evenLevel ? Integer.MAX_VALUE:Integer.MAX_VALUE;
+            for (int i = 0; i < size;i++) {
+                root = list.poll();
+                if(evenLevel && (root.data%2==0 || root.data<=temp)){
+                    return false;
                 }
-                if (node.left != null)
-                    q.add(node.left);
-                if (node.right != null)
-                    q.add(node.right);
+                if(!evenLevel && (root.data%2==1 || root.data>=temp)){
+                    return false;
+                }
+                if (root.left != null) {
+                    list.add(root.left);
+                }
+                if (root.right != null) {
+                    list.add(root.right);
+                }
             }
-
+            evenLevel=!evenLevel;
+            
         }
-
-        return result;
+        return true;
     }
 
     // Function to perform DFS traversal
@@ -80,12 +80,10 @@ public class Sum_of_Left_Leaves_level_order_traversal {
         root2.left.right = newNode(4);
 
         // sout
-        System.out.println("For min depth tree:");
+        System.out.println("Is odd even:");
         System.out.println();
-        System.out.println("Ans is:" + sumOfLeftLeaves(root1));
-        Queue<Node> list1 = new LinkedList<>();
-        list1.add(null);
-        list1.add(null);
-        System.out.println("size:" + list1.size());
+        System.out.println("Ans is:" + isEvenOddTree(root1));
+
     }
+    
 }

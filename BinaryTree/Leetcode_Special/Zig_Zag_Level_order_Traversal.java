@@ -1,6 +1,7 @@
 package BinaryTree.Leetcode_Special;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
@@ -43,11 +44,12 @@ public class Zig_Zag_Level_order_Traversal {
                 if (node.right != null)
                     q.add(node.right);
                 if (flag) {
-                    list.addFirst(node.data);
+                    list.addFirst(node.data);//addFirst method adds the elements at the beginning of the list
                 }
                 if (!flag) {
-                    list.addLast(node.data);
+                    list.addLast(node.data);//the addLast method adds the elements at the end
                 }
+                
             }
             result.add(list);
             flag = !flag;
@@ -102,6 +104,8 @@ public class Zig_Zag_Level_order_Traversal {
         obj.add("Gupta");
         System.out.println("Arraylist:" + obj);
         System.out.println("Ans is:" + zigzagLevelOrder(root1));
+        int[] arr={5,56,6,56,565,5};
+        Arrays.sort(arr);
     }
 
 }

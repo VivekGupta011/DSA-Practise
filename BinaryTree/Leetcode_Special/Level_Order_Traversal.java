@@ -74,7 +74,7 @@ public class Level_Order_Traversal {
         if (root == null) {
             return new ArrayList<>();
         }
-
+        int TotalCount=0;
         List<List<Integer>> ans = new ArrayList<>();
         Queue<Node> q = new LinkedList<>();
         q.add(root);
@@ -82,6 +82,7 @@ public class Level_Order_Traversal {
         while (!q.isEmpty()) {
             List<Integer> currLevel = new ArrayList<>();
             for (int size = q.size(); size > 0; --size) {
+                
                 Node data = q.poll();
                 currLevel.add(data.key);
                 // adding in queue
