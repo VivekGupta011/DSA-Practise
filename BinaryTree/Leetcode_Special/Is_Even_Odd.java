@@ -48,6 +48,7 @@ public class Is_Even_Odd {
                     list.add(root.right);
                 }
             }
+              
             evenLevel=!evenLevel;
             
         }
