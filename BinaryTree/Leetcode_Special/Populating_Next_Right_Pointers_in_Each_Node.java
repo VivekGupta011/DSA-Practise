@@ -1,13 +1,15 @@
 package BinaryTree.Leetcode_Special;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
 public class Populating_Next_Right_Pointers_in_Each_Node {
-     // for creating two binary tree
-     static class Node {
+    // for creating two binary tree
+    static class Node {
         int data;
         Node left;
         Node right;
@@ -26,24 +28,25 @@ public class Populating_Next_Right_Pointers_in_Each_Node {
     // Zig zag level order traversal
     public static Node connect(Node root) {
         // corner case
-        if (root == null) return null;
+        if (root == null)
+            return null;
         // Creating a Queue
         Queue<Node> q = new LinkedList<Node>();
         q.add(root);
         while (q.size() > 0) {
             // Creating a Queue
-            Node prev=null;
+            Node prev = null;
             LinkedList<Integer> list = new LinkedList<>();
             int size = q.size();
             for (int i = 0; i < size; i++) {
                 Node node = q.poll();
-                node.next=prev;
-                prev=node;
+                node.next = prev;
+                prev = node;
                 if (node.left != null)
                     q.add(node.left);
                 if (node.right != null)
                     q.add(node.right);
-                
+
             }
         }
 
@@ -80,6 +83,6 @@ public class Populating_Next_Right_Pointers_in_Each_Node {
         System.out.println(" Level order Traversal:");
         System.out.println();
         inorder(connect(root2));
-     
+
     }
 }
