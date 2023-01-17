@@ -1,9 +1,5 @@
-package BinaryTree;
-
-import java.util.LinkedList;
-import java.util.Queue;
-
-public class Use_for_level_order_traversal {
+package BinaryTree.Leetcode_Special;
+public class Lowest_Common_Ancestor {
     // for creating two binary tree
     static class Node {
         int data;
@@ -20,31 +16,24 @@ public class Use_for_level_order_traversal {
         return node;
     }
 
-    // Level order traversal
-    public static int maxDepth(Node root) {
-        if (root == null) {
-            return 0;
+
+    // Lowest Common Ancestor in Binary Tree
+    public static Node lowestCommonAncestor(Node root,Node p,Node q){
+
+        // Base case
+        if(root==null || root==p || root==q){
+            return root;
         }
-        Queue<Node> queue = new LinkedList<>();
-        queue.add(root);
-        int count = 0;
-        while (!queue.isEmpty()) {
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                Node node = queue.poll();
-                if (node.left != null) {
-                    queue.add(node.left);
-                }
-                if (node.right != null) {
-                    queue.add(node.right);
-                }
-            }
-            count++;
-        }
-        return count;
+        Node left=lowestCommonAncestor(root.left, p, q);
+        Node right=lowestCommonAncestor(root.right, p, q);
+
+        //result
+        if(left==null) return right;
+        else if(right==null) return left;
+        // if both left and right are not null then we found our result.
+        else return root;
     }
 
-    
 
     // Function to perform DFS traversal
     public static void inorder(Node root) {
@@ -71,14 +60,10 @@ public class Use_for_level_order_traversal {
         root2.left.left = newNode(2);
         root2.left.right = newNode(4);
 
-        // for first binary tree
-        System.out.println("first:");
-        inorder(root1);
-        System.out.println();
-        System.out.println("Second:");
-        inorder(root2);
-        System.out.println();
-        System.out.println("Max depth:" + maxDepth(root2));
-
+        // sout
+        System.out.println("Lowest Common Ancestor:");
+        Node ans=lowestCommonAncestor(root2, root2.right, root2.left.left);
+        System.out.println("Ans is:"+ans.data);
     }
+    
 }

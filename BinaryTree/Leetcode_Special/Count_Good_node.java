@@ -20,7 +20,7 @@ public class Count_Good_node {
     // Method for printing height of tree
     public static int sumOfNodes(Node root) {
 
-        if(root == null) {
+        if (root == null) {
             return 0;
         }
         int leftSum = sumOfNodes(root.left);
@@ -28,26 +28,29 @@ public class Count_Good_node {
         return leftSum + rightSum + root.data;
     }
 
-    // Method to count all Number of Good Node
-    public static int TotalCount(Node root,int max){
-
-        // base case
-        if(root==null) return 0;
-
-        int count=0;
-        if(max<=root.data) count++;
-        max=Math.max(max, root.data);
-
-        int left=TotalCount(root.left,max);
-        int right=TotalCount(root.right,max);
-        return left+right+count;
-
+    // main good Node
+     static int GoodCount=0;
+    public static int goodNodes(Node root) {
+        int max = Integer.MIN_VALUE;
+        goodNodesHelper(root, max);
+        return GoodCount;
     }
 
-    // main good Node
-    public static int goodNodes(Node root){
-        int max=Integer.MIN_VALUE;
-        return TotalCount(root, max); 
+    // Method to count all Number of Good Node
+    public static void goodNodesHelper(Node root, int max) {
+
+        // base case
+        if (root == null)
+            return;
+
+        if (max <= root.data)
+            GoodCount++;
+        max = Math.max(max, root.data);
+
+        goodNodesHelper(root.left, max);
+        goodNodesHelper(root.right, max);
+        return;
+
     }
 
     // Function to perform DFS traversal
