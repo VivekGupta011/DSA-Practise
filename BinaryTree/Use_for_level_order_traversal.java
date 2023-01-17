@@ -1,6 +1,7 @@
-package BinaryTree.Leetcode_Special;
-
-public class Count_Good_node {
+package BinaryTree;
+import java.util.LinkedList;
+import java.util.Queue;
+public class Use_for_level_order_traversal {
     // for creating two binary tree
     static class Node {
         int data;
@@ -17,39 +18,30 @@ public class Count_Good_node {
         return node;
     }
 
-    // Method for printing height of tree
-    public static int sumOfNodes(Node root) {
-
+    // Level order traversal
+    public static int maxDepth(Node root) {
         if(root == null) {
             return 0;
         }
-        int leftSum = sumOfNodes(root.left);
-        int rightSum = sumOfNodes(root.right);
-        return leftSum + rightSum + root.data;
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        int count = 0;
+        while(!queue.isEmpty()) {
+            int size = queue.size();
+            for(int i=0;i<size;i++) {
+                Node node = queue.poll();
+                if(node.left != null) {
+                    queue.add(node.left);
+                }
+                if(node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+            count++;
+        }
+        return count;
     }
-
-    // Method to count all Number of Good Node
-    public static int TotalCount(Node root,int max){
-
-        // base case
-        if(root==null) return 0;
-
-        int count=0;
-        if(max<=root.data) count++;
-        max=Math.max(max, root.data);
-
-        int left=TotalCount(root.left,max);
-        int right=TotalCount(root.right,max);
-        return left+right+count;
-
-    }
-
-    // main good Node
-    public static int goodNodes(Node root){
-        int max=Integer.MIN_VALUE;
-        return TotalCount(root, max); 
-    }
-
+    
     // Function to perform DFS traversal
     public static void inorder(Node root) {
         if (root != null) {
@@ -68,15 +60,21 @@ public class Count_Good_node {
         root1.left.left = newNode(2);
         root1.left.right = newNode(4);
         // for second binary tree
+        
+        Node root2 = newNode(5);
+        root2.left = newNode(3);
+        root2.right = newNode(8);
+        root2.left.left = newNode(2);
+        root2.left.right = newNode(4);
 
         // for first binary tree
         System.out.println("first:");
         inorder(root1);
         System.out.println();
-
-        // sout
-        System.out.println("For same tree:");
-        System.out.println("Ans is:");
+        System.out.println("Second:");
+        inorder(root2);
+        System.out.println();
+        System.out.println("Max depth:"+maxDepth(root2));
 
     }
 }
