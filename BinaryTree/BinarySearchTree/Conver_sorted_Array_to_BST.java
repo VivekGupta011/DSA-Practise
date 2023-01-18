@@ -1,6 +1,9 @@
 package BinaryTree.BinarySearchTree;
 
 public class Conver_sorted_Array_to_BST {
+
+    static Node root;
+
     // for creating two binary tree
     static class Node {
         int data;
@@ -14,40 +17,27 @@ public class Conver_sorted_Array_to_BST {
         }
     };
 
-    static Node root;
-
-    // for adding element in binary tree
-    public static void add(int value) {
-        root = addRecursive(root, value);
+    // Sorted array to Binary Search Tree
+    public static Node sortedArrayToBST(int[] num) {
+        if (num.length == 0)
+            return null;
+        return HelperForBST(num, 0, num.length - 1);
     }
 
-    // for insertion of new node in Binary Search tree
-    public static Node addRecursive(Node root, int value) {
 
-        // Base case:root is null
-        if (root == null) {
-            return new Node(value);
+    public static Node HelperForBST(int[] nums, int start, int end) {
+
+        // base case
+        if (start > end) {
+            return null;
         }
 
-        // Value is greater than root's key
-        if (value < root.data) {
-            root.left = addRecursive(root.left, value);
-        } else if (value > root.data) {
-            root.right = addRecursive(root.right, value);
-        }
-        // return the node pointer
+        int mid = (start + end) / 2;
+        Node root = new Node(nums[mid]);
+        root.left = HelperForBST(nums, start, mid - 1);
+        root.right = HelperForBST(nums, mid + 1, end);
         return root;
 
-    }
-
-    // Convert sorted array to BST
-    public static Node sortedArrayToBST(int[] nums) {
-
-        // for loop
-        for (int i = 0; i < nums.length; i++) {
-            add(nums[i]);
-        }
-        return root;
     }
 
     // Function to perform DFS Traversing the Tree
@@ -60,28 +50,11 @@ public class Conver_sorted_Array_to_BST {
     }
 
     public static void main(String[] args) {
-        // creating object
-        // Creation_BST bt=new Creation_BST();
-        // add(6);
-        // add(4);
-        // add(8);
-        // add(3);
-        // add(5);
-        // add(7);
-        // add(7);
-        // add(7);
-        // add(7);
-        // add(9);
-        // add(15);
-        // System.out.println("root:" + root.data);
-        // System.out.println("Printing Binary Search Tree!");
-        // System.out.println();
-        
         // creating a arrya
-        int[] array={-10,-3,0,5,9};
+        int[] array = { -10, -3, 0, 5, 9 };
         System.out.println("Sorted array to BST:");
-        sortedArrayToBST(array);
-        inorder(root);
+        inorder(sortedArrayToBST(array));
+        System.out.println("Ans is:"+0/2);
 
     }
 }

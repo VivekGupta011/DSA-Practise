@@ -32,7 +32,7 @@ public class Lowest_Common_Ancestor {
         else if(right==null) return left;
         // if both left and right are not null then we found our result.
         else return root;
-    }
+    } 
 
 
     // Function to perform DFS traversal
