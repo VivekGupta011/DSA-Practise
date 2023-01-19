@@ -83,6 +83,9 @@ public class Populating_Next_Right_Pointers_in_Each_Node {
         System.out.println(" Level order Traversal:");
         System.out.println();
         inorder(connect(root2));
+        ArrayList<Integer> list=new ArrayList<>();
+        list.add(0);
+        System.out.println("size:"+list.size());
 
     }
 }
