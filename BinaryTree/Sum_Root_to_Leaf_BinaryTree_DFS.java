@@ -20,7 +20,7 @@ public class Sum_Root_to_Leaf_BinaryTree_DFS {
     static int Helper(Node root, int Temp) {
         if (root == null)
             return 0;
-            Temp=Temp * 10 + root.key;
+        Temp = Temp * 10 + root.key;
         if (root.left == null && root.right == null) {
             return Temp;
         }
@@ -54,8 +54,9 @@ public class Sum_Root_to_Leaf_BinaryTree_DFS {
         tree.root.left.right = new Node(6);
         tree.root.left.right.left = new Node(5);
         tree.root.left.right.right = new Node(11);
-
-        System.out.print("\nBinary Tree: ");
+        
+        
+        System.out.print("Binary Tree:");
         tree.traverseTree(tree.root);
         System.out.println();
         System.out.println("sum:" + sumNumbers(tree.root));
