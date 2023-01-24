@@ -14,7 +14,7 @@ public class Merged_Two_BST {
         Node right;
 
         Node(int val) {
-            data = val;
+            this.data = val;
             left = null;
             right = null;
         }
