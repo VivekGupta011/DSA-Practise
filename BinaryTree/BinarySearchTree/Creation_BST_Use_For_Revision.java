@@ -63,8 +63,8 @@ public class Creation_BST_Use_For_Revision {
     // Function to perform DFS Traversing the Tree
     public static void inorder(Node root) {
         if (root != null) {
-            System.out.print(root.data + " ");
             inorder(root.left);
+            System.out.print(root.data + " ");
             inorder(root.right);
         }
     }
@@ -111,7 +111,6 @@ public class Creation_BST_Use_For_Revision {
         System.out.println();
         System.out.println("BFS Traversal:");
         Level_order_traversal(root);
-        long i=Long.MAX_VALUE;
 
 
     }
