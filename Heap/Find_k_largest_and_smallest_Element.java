@@ -3,6 +3,8 @@ package Heap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -72,6 +74,27 @@ public class Find_k_largest_and_smallest_Element {
         System.out.println("K smallest element is:" + findKlargest(list, k));
         System.out.println("K largest element is:" + findKSmallest(list, k));
 
-    }
+        // Creating an empty HashMap
+        HashMap<Integer, Integer> hash_map = new HashMap<Integer, Integer>();
 
+        // Mapping string values to int keys
+        hash_map.put(10, 2);
+        hash_map.put(15, 5);
+        hash_map.put(20, 6);
+        hash_map.put(25, 7);
+        hash_map.put(30, 8);
+
+        // Displaying the HashMap
+        System.out.println("Initial Mappings are: " + hash_map);
+
+        List<Integer> list2 = new LinkedList<>();
+        // Using keySet() to get the set view of keys
+        System.out.println("The set is: " + hash_map.keySet());
+        for (int i : hash_map.keySet()) {
+           System.out.println("Value is:"+ list2.add(hash_map.get(i)));
+
+        }
+        System.out.println("List2:"+list2);
+
+    }
 }
