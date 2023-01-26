@@ -1,6 +1,7 @@
 package BinaryTree.BinarySearchTree;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class Inorder_predecessor_and_Successor_BST {
 
@@ -141,6 +142,14 @@ public class Inorder_predecessor_and_Successor_BST {
         Successor(root, 3);
         SuccessierOptimize(root, 3);
         findPredecessoOptimized(root, 9);
+        HashSet<Integer> hash=new HashSet<Integer>();
+        hash.add(3);
+        hash.add(3);
+        hash.add(3);
+        hash.add(3);
+        hash.add(4);
+        hash.add(5);
+        System.out.println("Ans is:"+hash);
         
 
     }
