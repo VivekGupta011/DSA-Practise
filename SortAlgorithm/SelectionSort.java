@@ -6,26 +6,26 @@ import fundamental.Array;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] arr={2,0,1};
+        int[] arr = { 2, 0, 1 };
         Selection(arr);
-        System.out.println("Selection:"+Arrays.toString(arr));
+        System.out.println("Selection:" + Arrays.toString(arr));
     }
 
-    static void Selection(int[] arr){
-        for(int i=0;i<arr.length-1;i++){
-            int smallest=i;
-            for(int j=i+1;j<arr.length;j++){
-                if(arr[smallest]>arr[j]){
-                    smallest=j;
+    static void Selection(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            int smallest = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[smallest] > arr[j]) {
+                    smallest = j;
 
                 }
             }
-            int temp=arr[smallest]; 
-            arr[smallest]=arr[i];
-            arr[i]=temp;
-            
+            int temp = arr[smallest];
+            arr[smallest] = arr[i];
+            arr[i] = temp;
+
         }
 
     }
-        
+
 }

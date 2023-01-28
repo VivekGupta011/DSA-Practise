@@ -18,7 +18,7 @@ public class Top_k_Frequent_Elements {
 
         // taking maxheap for getting value
          //creating a max heap by just passing 'Collections.reverseOrder()'
-         PriorityQueue<Integer> max_heap=new PriorityQueue<Integer>(Comparator.reverseOrder());
+         PriorityQueue<Integer> max_heap=new PriorityQueue<Integer>((a, b) -> map.get(b) - map.get(a));
          for(int i:map.keySet()){
             max_heap.add(i);
          }
