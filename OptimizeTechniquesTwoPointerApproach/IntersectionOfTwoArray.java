@@ -71,7 +71,7 @@ public class IntersectionOfTwoArray {
             System.out.print(x + " ");   
             
 
-        System.out.println("Ans is:" + targetIndices(nums3, 2));
+        System.out.println("Ans is:" + targetIndices(nums3, 2));   
 
         int[] arr = new int[nums3.length];
         for (int i = 0; i < nums3.length; i++) {
