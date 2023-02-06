@@ -60,7 +60,28 @@ public class IntersectionOfTwoArray {
 
     }
 
-   
+    public boolean search(int[] nums, int target) {
+        int start = 0, end = nums.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target)
+                return true;
+            else if (nums[mid] > nums[start]) {
+                if (target >= nums[start] && target < nums[mid])
+                    end = mid - 1;
+                else
+                    start = mid + 1;
+            } else if (nums[mid] < nums[start]) {
+                if (target <= nums[end] && target > nums[mid])
+                    start = mid + 1;
+                else
+                    end = mid - 1;
+            } else {
+                start += 1;
+            }
+        }
+        return false;
+    }
 
     public static void main(String args[]) {
         int[] nums1 = { 1, 2, 2, 1 };
@@ -68,10 +89,9 @@ public class IntersectionOfTwoArray {
         int[] nums3 = { 1, 2, 5, 2, 3 };
         int[] ans = intersect(nums1, nums2);
         for (int x : ans)
-            System.out.print(x + " ");   
-            
+            System.out.print(x + " ");
 
-        System.out.println("Ans is:" + targetIndices(nums3, 2));   
+        System.out.println("Ans is:" + targetIndices(nums3, 2));
 
         int[] arr = new int[nums3.length];
         for (int i = 0; i < nums3.length; i++) {
