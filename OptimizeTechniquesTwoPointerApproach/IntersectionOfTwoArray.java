@@ -99,6 +99,10 @@ public class IntersectionOfTwoArray {
         }
 
         // arr=nums3;
+
+        
         System.out.println("clone array:" + Arrays.toString(arr));
+        System.out.println(1%6);
+        
     }
 }
