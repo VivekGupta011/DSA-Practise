@@ -82,6 +82,28 @@ public class IntersectionOfTwoArray {
         }
         return false;
     }
+    public static boolean check(int[] nums) {
+        int count=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            System.out.println("index:"+(i+1)%nums.length);
+            if(nums[i]>nums[(i+1)%nums.length])
+                 count++;
+        }
+        return (count<=1);
+    }
+
+    public static boolean checkString(String s) {
+        boolean result=true;
+        for(int i=0;i<s.length()-1;i++){
+            System.out.println("String:"+s.substring(i,i+2));
+            if((String)s.substring(i,i+2)=="ba"){
+                result=false;
+                break;
+            }
+        }
+        return result;
+    }
 
     public static void main(String args[]) {
         int[] nums1 = { 1, 2, 2, 1 };
@@ -102,7 +124,13 @@ public class IntersectionOfTwoArray {
 
         
         System.out.println("clone array:" + Arrays.toString(arr));
-        System.out.println(1%6);
+        System.out.println(5%6);
+        int[] array={2,1,3,4};
+        String name="helo";
+        System.out.println(name.substring(0, 2));
+        System.out.println("Ans is:"+check(array));
+        System.out.println("ans string:"+checkString("abab"));
+        System.out.println("ba"=="ba");
         
     }
 }
