@@ -90,11 +90,9 @@ public class CheckAscending {
         // String text1="is2 sentence4 This1 a3";
         // System.out.println("Ans is:"+areNumbersAscending(text));
         // SplitCheck(text1);
-
+        
         int[] array={42,11,1,97};
         System.out.println(countNicePairs(array));
-
-        
         
     }
     
