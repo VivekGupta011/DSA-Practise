@@ -8,12 +8,14 @@ public class CheckAscending {
 
 
     public static boolean areNumbersAscending(String s) {
+
+        
         int prev = 0;
     
         for (final String token : s.split(" ")){
             System.out.println("token:"+token);
             if (Character.isDigit(token.charAt(0))) {
-                
+
                 final int num = Integer.parseInt(token);
                 if (num <= prev)
                   return false;
