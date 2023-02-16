@@ -13,6 +13,7 @@ public class CheckAscending {
         for (final String token : s.split(" ")){
             System.out.println("token:"+token);
             if (Character.isDigit(token.charAt(0))) {
+                
                 final int num = Integer.parseInt(token);
                 if (num <= prev)
                   return false;
