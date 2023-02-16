@@ -8,7 +8,6 @@ public class CheckAscending {
 
 
     public static boolean areNumbersAscending(String s) {
-
         
         int prev = 0;
     
