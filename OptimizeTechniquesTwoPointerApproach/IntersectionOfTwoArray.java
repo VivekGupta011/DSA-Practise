@@ -2,6 +2,7 @@ package OptimizeTechniquesTwoPointerApproach;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class IntersectionOfTwoArray {
@@ -105,6 +106,23 @@ public class IntersectionOfTwoArray {
         return result;
     }
 
+    public static int firstUniqChar(String s) {
+        HashMap<Character, Integer> count = new HashMap<Character, Integer>();
+        int n = s.length();
+        for (int i = 0; i < n; i++) {
+            char c = s.charAt(i);
+            count.put(c, count.getOrDefault(c, 0) + 1);
+        }
+        
+        System.out.println("hashmap:"+count);
+        // find the index
+        for (int i = 0; i < n; i++) {
+            if (count.get(s.charAt(i)) == 1) 
+                return i;
+        }
+        return -1;
+    }
+
     
     public static void main(String args[]) {
         int[] nums1 = { 1, 2, 2, 1 };
@@ -132,6 +150,8 @@ public class IntersectionOfTwoArray {
         System.out.println("Ans is:"+check(array));
         System.out.println("ans string:"+checkString("abab"));
         System.out.println("ba"=="ba");
+
+        System.out.println("Unique:"+firstUniqChar("loveleetcode"));
         
     }
 }
