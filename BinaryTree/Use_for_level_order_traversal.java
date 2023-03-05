@@ -1,5 +1,7 @@
 package BinaryTree;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -44,7 +46,44 @@ public class Use_for_level_order_traversal {
         return count;
     }
 
-    
+    public static long kthLargestLevelSum(Node root, int k) {
+
+        if (root == null)
+            return 0;
+        int result = 0;
+        Queue<Node> q = new LinkedList<Node>();
+        q.add(root);
+
+        // creating Arraylist
+        ArrayList<Integer> KthValue = new ArrayList<Integer>();
+        int total;
+
+        while (q.size() > 0) {
+            // Creating a Queue
+            int size = q.size();
+            total = 0;
+            for (int i = 0; i < size; i++) {
+                Node node = q.poll();
+                total += node.data;
+
+                if (node.left != null)
+                    q.add(node.left);
+                if (node.right != null)
+                    q.add(node.right);
+            }
+
+            KthValue.add(total);
+
+        }
+        // sorting
+        Collections.sort(KthValue, Collections.reverseOrder());
+        int ans = 0;
+        for (int i = 0; i < k; i++) {
+            ans = KthValue.get(i);
+        }
+
+        return Long.valueOf(ans);
+    }
 
     // Function to perform DFS traversal
     public static void inorder(Node root) {
