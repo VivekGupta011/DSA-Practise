@@ -2,6 +2,7 @@ package OptimizeTechniquesTwoPointerApproach;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -122,6 +123,60 @@ public class IntersectionOfTwoArray {
         }
         return -1;
     }
+    public int maxPower(String s) {
+        
+        HashMap<Character,Integer> map=new HashMap<>();
+        for(int i=0;i<s.length();i++){
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i),0)+1);
+        }
+          
+        // taking max value
+        int check = Integer.MIN_VALUE;
+        for(char key:map.keySet()){
+            if(check<map.get(key)){
+                check=map.get(key);
+            }
+        }
+        return check;
+
+
+    }
+    public static int splitNum(int num) {
+        
+        ArrayList<Integer> Evenlist=new ArrayList<>();
+        ArrayList<Integer> Oddlist=new ArrayList<>();
+        
+        while(num>0){
+            int result=num%10;
+            if(result%2==0){
+                Evenlist.add(result);
+            }else{
+                Oddlist.add(result);
+            }
+            
+            num=num/10;
+        }
+        
+        Collections.sort(Evenlist);
+        Collections.sort(Oddlist);
+        
+        String evenStr="";
+        for(int i=0;i<Evenlist.size();i++){
+            evenStr+=Evenlist.get(i);
+        }
+        
+        String oddStr="";
+        for(int i=0;i<Oddlist.size();i++){
+            oddStr+=Oddlist.get(i);
+        }
+        
+        int val1 = Integer.parseInt(evenStr);
+        int val2 = Integer.parseInt(oddStr);
+        
+        return val1+val2;
+        
+        
+    }
 
     
     public static void main(String args[]) {
@@ -152,6 +207,11 @@ public class IntersectionOfTwoArray {
         System.out.println("ba"=="ba");
 
         System.out.println("Unique:"+firstUniqChar("loveleetcode"));
+
+        System.out.println(123/10);
+        System.out.println(123%10);
+
+        System.out.println("ans is:"+splitNum(687));
         
     }
 }
