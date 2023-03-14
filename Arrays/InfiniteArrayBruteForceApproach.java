@@ -100,13 +100,36 @@ public class InfiniteArrayBruteForceApproach {
         return  sum;
 
     }
+    public static int maxScore(int[] nums) {
+        
+        ArrayList<Integer> list=new ArrayList<Integer>();
+        for(int i=0;i<nums.length;i++){
+            list.add(nums[i]);
+        }
+
+        // Sorting the arraylist in descending order
+        Collections.sort(list, Collections.reverseOrder());
+        System.out.println("list:"+list);
+        int[] array=new int[nums.length];
+        array[0]=list.get(0);
+        for(int i=1;i<list.size();i++){
+            array[i]=list.get(i)+array[i-1];
+        }
+
+        // Sorting the array in descending order
+        Arrays.sort(array);
+        System.out.println("array:"+Arrays.toString(array));
+
+        return array[array.length-1];
+    
+    }
 
     public static void main(String[] args) {
         int[] array = { 1, 3, 5, 8, 12, 15, 17, 18, 20, 28, 30, 140, 2020 };
         System.out.println("Ans is:" + CheckInfinite(array, 18));
-        int[] arr = { 4, 1, 2, 3 };
-        System.out.println("Ans is:" + Arrays.toString(sortEvenOdd(arr)));
-        System.out.println("ans is:"+findTheDifference("abcd","abcde"));
+        int[] arr = { -687767,-860350,950296,52109,510127,545329,-291223,-966728,852403,828596,456730,-483632,-529386,356766,147293,572374,243605,931468,641668,494446};
+        System.out.println(maxScore(arr));
+        
 
     }
 
